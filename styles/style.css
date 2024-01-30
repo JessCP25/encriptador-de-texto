@@ -1,0 +1,123 @@
+/* ESTILOS GENERALES */
+:root {
+  --dark-blue: #0a3871;
+  --gray-400: #495057;
+  --gray-500: #343a40;
+  --light-blue: #f3f5fc;
+  --blue: #D8DFE8;
+}
+
+body {
+  background-color: var(--light-blue);
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  padding: 40px;
+}
+
+/* ESTILOS DEL HEADER */
+
+.header__logo {
+  width: 120px;
+  height: 48px;
+  object-fit: cover;
+}
+
+/* ESTILOS DEL HEADER */
+
+main {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.input {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  width: 100%;
+  flex: 1;
+  border: none;
+  background-color: var(--light-blue);
+  font-family: 'Inter';
+  color: var(--dark-blue);
+  font-size: 32px;
+  resize: none;
+}
+
+textarea::placeholder{
+  font-family: 'Inter';
+  color: var(--dark-blue);
+  font-size: 32px;
+  outline: none;
+}
+
+.input__content{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input__message{
+  color: var(--gray-400);
+  font-size: 12px;
+}
+
+.input__buttons {
+  width: 100%;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.button {
+  width: 50%;
+  border: none;
+  padding: 24px;
+  text-align: center;
+  border-radius: 24px;
+  font-size: 16px;
+}
+
+.primary-button {
+  background-color: var(--dark-blue);
+  color: white;
+}
+
+.secondary-button{
+  background-color: var(--blue);
+  color: var(--dark-blue);
+  border: 1px solid var(--dark-blue);
+}
+
+.result {
+  width: 30%;
+  padding: 32px;
+}
+
+.result__img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.result__title{
+  color: var(--gray-500);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 120%;
+  text-align: center;
+}
+
+.result__message{
+  display: block;
+  color: var(--gray-400);
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+}
