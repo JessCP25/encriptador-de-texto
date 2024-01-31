@@ -4,18 +4,21 @@
   --gray-400: #495057;
   --gray-500: #343a40;
   --light-blue: #f3f5fc;
-  --blue: #D8DFE8;
+  --blue: #d8dfe8;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   background-color: var(--light-blue);
   font-family: "Inter", sans-serif;
   font-family: "Poppins", sans-serif;
+  width: 100vw;
+  height: 100vh;
   min-height: 100vh;
-}
-
-header {
-  padding: 40px;
 }
 
 /* ESTILOS DEL HEADER */
@@ -30,14 +33,17 @@ header {
 
 main {
   display: flex;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 80px;
+  padding: 40px;
+  height: 100%;
+  width: 100%;
 }
 
 .input {
   width: 70%;
   display: flex;
   flex-direction: column;
+  margin-top: 100px;
 }
 
 textarea {
@@ -45,26 +51,31 @@ textarea {
   flex: 1;
   border: none;
   background-color: var(--light-blue);
-  font-family: 'Inter';
+  font-family: "Inter";
   color: var(--dark-blue);
   font-size: 32px;
   resize: none;
 }
 
-textarea::placeholder{
-  font-family: 'Inter';
+textarea::placeholder {
+  font-family: "Inter";
   color: var(--dark-blue);
   font-size: 32px;
   outline: none;
 }
 
-.input__content{
+textarea:focus {
+  outline: none;
+}
+
+.input__content {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-bottom: 16px;
 }
 
-.input__message{
+.input__message {
   color: var(--gray-400);
   font-size: 12px;
 }
@@ -90,7 +101,7 @@ textarea::placeholder{
   color: white;
 }
 
-.secondary-button{
+.secondary-button {
   background-color: var(--blue);
   color: var(--dark-blue);
   border: 1px solid var(--dark-blue);
@@ -99,22 +110,28 @@ textarea::placeholder{
 .result {
   width: 30%;
   padding: 32px;
+  background-color: white;
+  border-radius: 32px;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
 }
 
 .result__img {
-  width: 100%;
+  width: 336px;
+  height: 304px;
   object-fit: cover;
 }
 
-.result__title{
+.result__title {
   color: var(--gray-500);
   font-size: 24px;
   font-weight: 700;
   line-height: 120%;
   text-align: center;
+  margin-top: 32px;
+  margin-bottom: 16px;
 }
 
-.result__message{
+.result__message {
   display: block;
   color: var(--gray-400);
   font-size: 16px;
