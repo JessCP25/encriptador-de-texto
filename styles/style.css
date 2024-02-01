@@ -138,3 +138,32 @@ textarea:focus {
   line-height: 150%;
   text-align: center;
 }
+
+.result__2{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.result__textarea {
+  width: 100%;
+  flex: 1;
+  border: none;
+  background-color: white;
+  font-family: "Inter";
+  color: var(--gray-400);
+  font-size: 24px;
+  resize: none;
+}
+
+.result__textarea:focus {
+  outline: none;
+}
+
+.result button{
+  width: 100%;
+}
+
+.inactive{
+  display: none;
+}

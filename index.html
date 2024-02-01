@@ -20,7 +20,7 @@
         <img class="header__logo" src="assets/Logo.png" alt="Logo" />
       </header>
       <section class="input">
-        <textarea placeholder="Ingrese el texto aqui" name="" id="" cols="30" rows="10"></textarea>
+        <textarea placeholder="Ingrese el texto aqui" name="" id="input" cols="30" rows="10"></textarea>
         <div class="input__content">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -46,16 +46,22 @@
           </p>
         </div>
         <div class="input__buttons">
-          <button class="button primary-button">Encriptar</button>
-          <button class="button secondary-button">Desencriptar</button>
+          <button onclick="encriptar()" class="button primary-button">Encriptar</button>
+          <button onclick="desencriptar()" class="button secondary-button">Desencriptar</button>
         </div>
       </section>
       <section class="result">
-        <img class="result__img" src="assets/Muñeco.png" alt="" />
-        <p class="result__title">Ningún mensaje fue encontrado</p>
-        <span class="result__message"
-          >Ingrese el texto que desees encriptar o desencriptar</span
-        >
+        <div class="result__1 inactive">
+          <img class="result__img" src="assets/Muñeco.png" alt="" />
+          <p class="result__title">Ningún mensaje fue encontrado</p>
+          <span class="result__message"
+            >Ingrese el texto que desees encriptar o desencriptar</span
+          >
+        </div>
+        <div class="result__2">
+          <textarea class="result__textarea" name="" id="result" cols="30" rows="10"></textarea>
+          <button class="button secondary-button">Copiar</button>
+        </div>
       </section>
     </main>
     <footer></footer>
