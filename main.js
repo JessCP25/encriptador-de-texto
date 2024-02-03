@@ -1,21 +1,24 @@
 const resultado = document.querySelector("#result");
 const inputVacio = document.querySelector('#result--vacio');
 const inputMensaje = document.querySelector('#result--mensaje');
+const mensajeError = document.querySelector('#mensajeError');
 
 const encriptar = () => {
   const input = document.querySelector("#input");
 
+  // LIMPIAR RESULTADO
+  resultado.value = ''
+  mensajeError.textContent = '';
+
   // QUITAR ESPACIOS
 
   const valorInput = input.value.trim();
-
-  if(valorInput === '') return;
-
+  
+  // VERIFICA SI SOLO SON MINÚSCULAS - CARACTERES - ACENTOS - VACIO
+  if (!verificar(valorInput)) return;
+  
   inputMensaje.classList.remove('inactive');
   inputVacio.classList.add('inactive');
-
-  // VERIFICA SI SOLO SON MINÚSCULAS - CARACTERES - ACENTOS
-  if (!verificar(input.value)) return;
   
   let valor = input.value.split("");
 
@@ -41,32 +44,35 @@ const encriptar = () => {
 
 const desencriptar = () => {
   const input = document.querySelector("#input");
+
+  // LIMPIAR RESULTADO
+  resultado.value = ''
+  mensajeError.textContent = '';
   
   // QUITAR ESPACIOS
   let valor = input.value.trim();
 
-  if(valor === '') return;
+  // VERIFICA SI SOLO SON MINÚSCULAS - CARACTERES - ACENTOS - VACIO
+  if (!verificar(valor)) return;
 
   inputMensaje.classList.remove('inactive');
   inputVacio.classList.add('inactive');
 
-  // VERIFICA SI SOLO SON MINÚSCULAS - CARACTERES - ACENTOS
-  if (!verificar(valor)) return;
 
   if (valor.includes("ai")) {
-    valor = valor.replace("ai", "a");
+    valor = valor.replaceAll("ai", "a");
   }
   if (valor.includes("enter")) {
-    valor = valor.replace("enter", "e");
+    valor = valor.replaceAll("enter", "e");
   }
   if (valor.includes("imes")) {
-    valor = valor.replace("imes", "i");
+    valor = valor.replaceAll("imes", "i");
   }
   if (valor.includes("ober")) {
-    valor = valor.replace("ober", "o");
+    valor = valor.replaceAll("ober", "o");
   }
   if (valor.includes("ufat")) {
-    valor = valor.replace("ufat", "u");
+    valor = valor.replaceAll("ufat", "u");
   }
 
   input.value = "";
@@ -82,6 +88,18 @@ const copiar = () => {
 };
 
 const verificar = (input) => {
-  const verificador = /^[a-z]+$/;
-  return verificador.test(input) ? true : false;
+  if(input === ''){
+    mensajeError.textContent = '*Necesita escribir el mensaje que desea encriptar o desencriptar.';
+    inputMensaje.classList.add('inactive');
+  inputVacio.classList.remove('inactive');
+    return false;
+  };
+  const verificador = /^[a-z\s]+$/;
+  if (!verificador.test(input)) {
+    mensajeError.textContent = '*Recuerde que el mensaje no debe tener mayúsculas, acentos o caracteres especiales.';
+    inputMensaje.classList.add('inactive');
+  inputVacio.classList.remove('inactive');
+    return false;
+  };
+  return true;
 };
