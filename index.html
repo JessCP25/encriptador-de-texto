@@ -51,16 +51,16 @@
         </div>
       </section>
       <section class="result">
-        <div class="result__1 inactive">
+        <div id="result--vacio" class="result--vacio">
           <img class="result__img" src="assets/Muñeco.png" alt="" />
           <p class="result__title">Ningún mensaje fue encontrado</p>
           <span class="result__message"
             >Ingrese el texto que desees encriptar o desencriptar</span
           >
         </div>
-        <div class="result__2">
-          <textarea class="result__textarea" name="" id="result" cols="30" rows="10"></textarea>
-          <button class="button secondary-button">Copiar</button>
+        <div id="result--mensaje" class="result--mensaje inactive">
+          <textarea readonly class="result__textarea" name="" id="result" cols="30" rows="10"></textarea>
+          <button onclick="copiar()" class="button secondary-button">Copiar</button>
         </div>
       </section>
     </main>

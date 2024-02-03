@@ -94,6 +94,7 @@ textarea:focus {
   text-align: center;
   border-radius: 24px;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .primary-button {
@@ -139,7 +140,7 @@ textarea:focus {
   text-align: center;
 }
 
-.result__2{
+.result--mensaje{
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -158,6 +159,14 @@ textarea:focus {
 
 .result__textarea:focus {
   outline: none;
+}
+
+.result__textarea:hover{
+  cursor: auto;
+}
+
+.result__textarea::selection{
+  background-color: transparent;
 }
 
 .result button{
