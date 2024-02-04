@@ -16,8 +16,7 @@ body {
   background-color: var(--light-blue);
   font-family: "Inter", sans-serif;
   font-family: "Poppins", sans-serif;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   min-height: 100vh;
 }
 
@@ -37,10 +36,16 @@ main {
   padding: 40px;
   height: 100%;
   width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.content{
+  display: flex;
+  gap:80px;
 }
 
 .input {
-  width: 70%;
+  width: 55%;
   display: flex;
   flex-direction: column;
   margin-top: 70px;
@@ -109,16 +114,22 @@ textarea:focus {
 }
 
 .result {
-  width: 30%;
+  width: 45%;
   padding: 32px;
   background-color: white;
   border-radius: 32px;
   box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
 }
+.result--vacio{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 
 .result__img {
-  width: 336px;
-  height: 304px;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -184,4 +195,51 @@ textarea:focus {
 
 .inactive{
   display: none;
+}
+
+@media (max-width: 950px) {
+  main{
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+  }
+  .input, .result{
+    width: 50%;
+    display: inline-flex;
+  }
+  .content{
+    gap: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .content{
+    flex-direction: column;
+    gap: 60px;
+  }
+  .input, .result{
+    width: 100%;
+  }
+  .input{
+    margin-top: 20px;
+  }
+  .result__img{
+    display: none;
+  }
+  .result--vacio{
+    text-align: center;
+    width: 100%;
+  }
+  .result__title{
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .input__buttons{
+    flex-direction: column;
+  }
+  .button{
+    width: 100%;
+  }
 }
